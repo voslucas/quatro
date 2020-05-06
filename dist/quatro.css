@@ -1,0 +1,55 @@
+.free {
+    border-width: 0px;
+    border-radius: 0px;
+    border-color: darkslategray;
+    border-style: solid;
+    display: inline-block;
+    /* width:126px; */
+  }
+
+  .free tr {
+    height: 30px;
+  }
+
+  .free tr td {
+    width: 30px;
+    border: 0px;
+    vertical-align: middle;
+  }
+
+  .free tr td img {
+    /* width: 26px; */
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .board {
+    border-width: 3px;
+    border-radius: 3px;
+    border-color: darkslategray;
+    border-style: solid;
+    background-color: lightgray;
+    display: inline-block;
+    /* width:130px;
+    height:130px; */
+  }
+
+  .board tr {
+    height: 30px;
+  }
+
+  .board tr td {
+    width: 30px;
+    border: 1px solid black;
+    vertical-align: middle;
+  }
+
+  .board tr td img {
+    /* width: 26px; */
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .highlight {
+    background-color: lightskyblue;
+  }
