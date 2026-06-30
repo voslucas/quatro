@@ -12,7 +12,7 @@ export class BoardExplainWinStates extends React.Component<EmptyProps, EmptyProp
   
     }
   
-    private timerID? : number;
+    private timerID? : ReturnType<typeof setInterval>;
     private winnerID : number =0;
     private winners : number[] = [];
   

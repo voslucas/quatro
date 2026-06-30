@@ -41,6 +41,7 @@ export class BoardWithGame extends React.Component<EmptyProps, BoardWithGameStat
   }
 
   nextMove() {
+    if (this.state.boardLogic.winCellIndex !== -1) { return; }
     this.state.gameLogic.DoMove(this.state.boardLogic);
     this.setState(
       {
@@ -93,7 +94,7 @@ export class BoardWithGame extends React.Component<EmptyProps, BoardWithGameStat
     this.isBusy = false;
   }
 
-  private timeOutID?: number;
+  private timeOutID?: ReturnType<typeof setTimeout>;
 
   componentWillUnmount() {
     clearTimeout(this.timeOutID);

@@ -64,7 +64,7 @@ export class GameLogic {
 
       this.history.push(record);
 
-      if (!move.location) {
+      if (move.location === undefined || move.location === null) {
         //something went wrong!
       }
   
@@ -187,10 +187,10 @@ export class BoardLogic {
       let locations = this.getAvailableLocations();
   
       for (let index = 0; index < locations.length; index++) {
-      
-        var loc = locations[index];
-        var bl = this.simulateMove({ location: loc, nextPiece:-1}); 
-        
+
+        const loc = locations[index];
+        const bl = this.simulateMove({ location: loc, nextPiece:-1});
+
         if (bl.winCellIndex>=0) {
           result=loc;
         }
@@ -224,7 +224,7 @@ export class BoardLogic {
         let p3 = this.pieces[locations[2]];
         let p4 = this.pieces[locations[3]];
   
-        if ((p1 != 0) && (p2 != 0) && (p3 != 0) && (p4 != 0)) {
+        if ((p1 >= 1 && p1 <= 16) && (p2 >= 1 && p2 <= 16) && (p3 >= 1 && p3 <= 16) && (p4 >= 1 && p4 <= 16)) {
           //locations all have a piece. now we look at the 4 location for simular 
           for (let i = 0; i < 4; i++) {
             if ((BoardLogic.PieceBitValue[p1 - 1][i] == BoardLogic.PieceBitValue[p2 - 1][i]) &&
@@ -246,7 +246,6 @@ export class BoardLogic {
   
       if (this.winCellIndex == -1) {
         if (this.nextPiece == undefined) {
-          console.log("Illegal move.");
           this.winCellIndex = -3;
         }
       }
